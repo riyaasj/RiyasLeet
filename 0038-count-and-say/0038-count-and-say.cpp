@@ -4,18 +4,22 @@ public:
         if(n == 1){
             return "1";
         }
-        string result, x = countAndSay(n - 1);
+        string r;
+        int rindex = 0;
+        string x = countAndSay(n - 1);
         int i = 0;
         while(i < x.length()){
-            int count = 0;
+            int c = 0;
             int num = x[i];
             while(i < x.length() && x[i] == num){
-                count++;
+                c++;
                 i++;
+                cout << c;
             }
-            result += to_string(count);
-            result += num;   
+            r += to_string(c);
+            r += num;
+            
         }
-        return result;
+        return r;
     }
 };
