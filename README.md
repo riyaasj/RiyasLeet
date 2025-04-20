@@ -4,6 +4,10 @@ Welcome to **RiyasLeet**, a collection of my solutions to LeetCode problems cate
 
 ## Topics
 - [Strings](#Strings)
+- [Array](#Array)
+- [Two Pointers](#TwoPointers)
+- [Binary Search](#BinarySearch)
+- [Sorting](#Sorting)
 
 ## Strings
 | #    | Title                                                                      | Solution                                                                                   | Difficulty |
