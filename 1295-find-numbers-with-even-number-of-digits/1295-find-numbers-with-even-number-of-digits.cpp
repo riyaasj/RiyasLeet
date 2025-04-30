@@ -2,10 +2,10 @@ class Solution {
 public:
     int findNumbers(vector<int>& nums) {
         int count = 0;
-        for(int i = 0; i < nums.size(); i++){
-            if((int)floor(log10(nums[i])) % 2 == 1){
+        for(int num: nums){
+            if((num >= 10 && num <= 99) || (num >= 1000 && num <= 9999) || num == 100000){
                 count++;
-            } 
+            }
         }
         return count;
     }
