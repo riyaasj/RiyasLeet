@@ -4,11 +4,8 @@ public:
         if(numRows == 1){
             return {{1}};
         }
-        else if(numRows == 2){
-            return {{1}, {1, 1}};
-        }
-        vector<vector<int>> r = {{1}, {1, 1}};
-        for(int i = 2; i < numRows; i++){
+        vector<vector<int>> r = {{1}};
+        for(int i = 1; i < numRows; i++){
             vector<int> n;
             n.push_back(1);
             vector<int> x = r[r.size() - 1];
