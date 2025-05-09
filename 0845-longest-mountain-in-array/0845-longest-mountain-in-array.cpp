@@ -7,7 +7,7 @@ public:
                 continue;
             }
             int k = i - 2, c = 3;
-            while(k > 0){
+            while(k >= 0){
                 if(arr[k] < arr[k + 1]){
                     c++;
                 }
