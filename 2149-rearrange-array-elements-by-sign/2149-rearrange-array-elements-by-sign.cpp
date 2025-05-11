@@ -10,9 +10,6 @@ public:
                 pos.push_back(i);
             }
         }
-        for(int i: pos){
-            cout << i << " ";
-        }
         for(int i = 0; i < nums.size(); i++){
             if(i % 2){
                 nums[i] = neg[i / 2];
