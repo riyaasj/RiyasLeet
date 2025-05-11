@@ -1,13 +1,13 @@
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
-        map <int, int> x;
-        x[0] = 1;
-        int sum = 0, count = 0;
-        for(int i = 0; i < nums.size(); i++){
-            sum += nums[i];
-            count += x[sum - k];
-            x[sum]++;
+        int n = nums.size(), sum = 0, count = 0;
+        map<int, int> prefixSum;
+        prefixSum.insert({0, 1});
+        for(int i: nums){
+            sum += i;
+            count += prefixSum[sum - k];
+            prefixSum[sum]++;
         }
         return count;
     }
