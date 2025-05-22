@@ -12,9 +12,7 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         ListNode *a = head, *b = head;
-        stack<int> q;
         while(b && b->next){
-            q.push(a->val);
             a = a->next;
             b = b->next->next;
         }
