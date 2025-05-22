@@ -22,12 +22,20 @@ public:
         if(b != NULL){
             a = a->next;
         }
+        b = NULL;
         while(a){
-            if(a->val != q.top()){
+            ListNode *t = a->next;
+            a->next = b;
+            b = a;
+            a = t;
+        }
+        a = head;
+        while(b){
+            if(b->val != a->val){
                 return false;
             }
+            b = b->next;
             a = a->next;
-            q.pop();
         }
         return true;
     }
