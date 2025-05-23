@@ -12,6 +12,11 @@
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
+        TreeNode *n = new TreeNode(val);
+        if(root == NULL){
+            root = n;
+            return root;
+        }
         TreeNode *a = root, *b = NULL;
         while(a){
             b = a;
@@ -23,10 +28,10 @@ public:
             }
         }
         if(val < b->val){
-            b->left = new TreeNode(val);
+            b->left = n;
         }
         else{
-            b->right = new TreeNode(val);
+            b->right = n;
         }
         return root;
     }
