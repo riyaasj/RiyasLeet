@@ -3,15 +3,15 @@ public:
     int longestPalindrome(vector<string>& words){
         unordered_map<string, int> s;
         int c = 0, d = 0;
-        for(int i = 0; i < words.size(); i++){
-            if(s[{words[i][1], words[i][0]}]){
+        for(auto word: words){
+            if(s[{word[1], word[0]}]){
                 c += 4;
-                if(--s[{words[i][1], words[i][0]}] == 0){
-                    s.erase({words[i][1], words[i][0]});
+                if(--s[{word[1], word[0]}] == 0){
+                    s.erase({word[1], word[0]});
                 }
             }
             else{
-                s[words[i]]++;
+                s[word]++;
             }
         }
         for(auto x: s){
