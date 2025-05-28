@@ -1,38 +1,41 @@
 class Solution {
 public:
     int romanToInt(string s) {
-       int res = 0, k = -1;
-        for(int i = 0; i < s.size(); i++){
-            int x;
-            switch(s[i]){
-                case 'I': 
-                    x = 1;
-                    break;
-                case 'V': 
-                    x = 5;
-                    break;
-                case 'X': 
-                    x = 10;
-                    break;
-                case 'L': 
-                    x = 50;
-                    break;
-                case 'C': 
-                    x = 100;
-                    break;
-                case 'D': 
-                    x = 500;
-                    break;
-                case 'M': 
-                    x = 1000;
-                    break;
+        int res = 0;
+        int x = 0;
+        int k;
+        for(int i = s.length() - 1; i >= 0; i--){
+            if(s[i] == 'I'){
+                x = 1;
             }
-            if(k != -1 && k < x){
-                res -= 2 * k;
+            else if(s[i] == 'V'){
+                x = 5;
             }
-            res += x;
+            else if(s[i] == 'X'){
+                x = 10;
+            }
+            else if(s[i] == 'L'){
+                x = 50;
+            }
+            else if(s[i] == 'C'){
+                x = 100;
+            }
+            else if(s[i] == 'D'){
+                x = 500;
+            }
+            else{
+                x = 1000;
+            }
+            if(i + 1 <= s.length() - 1 && k > x){
+                res = res - x;
+            }
+            else{
+                res = res + x;
+            }
             k = x;
-       }
-       return res;
-    }           
+           
+        }
+        return res;
+    }
+            
 };
