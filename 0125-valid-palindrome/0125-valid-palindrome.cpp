@@ -9,7 +9,6 @@ public:
             }
             l++;
         }
-        cout << res;
         l = 0;
         int r = res.size() - 1;
         while(l < r){
