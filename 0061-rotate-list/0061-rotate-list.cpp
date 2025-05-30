@@ -9,17 +9,6 @@
  * };
  */
 class Solution {
-private:
-    ListNode *r(ListNode* head){
-        ListNode *a = head, *b = NULL;
-        while(a){
-            ListNode *temp = a->next;
-            a->next = b;
-            b = a;
-            a = temp;
-        }
-        return b;
-    }
 public:
     ListNode* rotateRight(ListNode* head, int k) {
         if(head == NULL || k == 0){
@@ -35,15 +24,13 @@ public:
         if(k == 0){
             return head;
         }
-        ListNode* a = r(head), *b = a, *c = NULL;
-        while(k > 0){
-            c = b;
-            b = b->next;
-            k--;
+        temp->next = head;
+        ListNode *a = head;
+        for (int i = 0; i < n - k - 1; i++) {
+            a = a->next; // Move to the correct spot
         }
-        c->next = NULL;
-        ListNode *d = r(a);
-        a->next = r(b);
-        return d;
+        temp = a->next;
+        a->next = NULL;
+        return temp;
     }
 };
